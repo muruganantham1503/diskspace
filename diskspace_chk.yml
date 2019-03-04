@@ -1,0 +1,10 @@
+-hosts:all
+user:labuser
+sudo:yes
+gather_facts:yes
+tasks:
+-name:Gather the free disk space
+shell:df -h
+register:result
+-name:Display the JSON formatted results
+debug:var=result
